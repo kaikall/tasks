@@ -4,6 +4,13 @@
 
 # Home page
 GET        /                             controllers.Application.index
+GET        /login                        controllers.LoginController.index
+
+
+# web socket chat app routes
+GET        /chat                          controllers.chat.index
+GET        /load                          controllers.chat.load
+GET        /data                          controllers.chat.data
 
 # Prefix must match `play.assets.urlPrefix`
 GET        /assets/*file                 controllers.Assets.at(file)

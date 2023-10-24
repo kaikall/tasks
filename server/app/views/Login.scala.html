@@ -1,0 +1,11 @@
+@import play.api.i18n._
+
+@(loginForm: Form[LoginData])(implicit messages: MessagesProvider)
+
+@import helper._
+
+@form(routes.LoginController.handleLogin) {
+@inputText(loginForm("email"))
+@inputPassword(loginForm("password"))
+<input type="submit" value="Login">
+}

@@ -1,12 +1,68 @@
 @(message: String)
 
-@main("Play with Scala.js") {
-
-  <h2>Play and Scala.js share a same message</h2>
-  <ul>
-    <li>Play shouts out: <em>@message</em></li>
-    <li>Scala.js shouts out: <em id="scalajsShoutOut"></em></li>
-  </ul>
-
-  <div id="root"></div>
+@main("Kai's Homepage") {
+  <!DOCTYPE html>
+  <html>
+      <head>
+          <title>Kai Kallingal</title>
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@@0,400;0,800;1,200;1,400&family=Vollkorn:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">          <link rel="stylesheet" href="/server/public/stylesheets/tasks.css">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      </head>
+      <header>
+          <div class="navbar" id="topnav">
+              <ul>
+                  <li class="dropdown">
+                          <button class="dropbtn">Tasks</button>
+                          <div class="dropdown-content">
+                              <a href="task3.html">Task 3</a>
+                              <a href="task4.html">Task 4</a>
+                              <a href="#">Task 5</a>
+                          </div>
+                  </li>
+                  <li><a href="AboutMe.html">About Me</a></li>
+                  <li><a href="index.html" class="active">Home</a></li>
+                  
+              </ul>
+            </div>
+      </header>
+      <body>
+          <h1>Kai Kallingal - Portfolio for CSCI3345</h1>
+          <section class="portrait">
+              <img src="/server/public/images/portrait.png" >
+          </section>
+          <section class="right-content">
+              <h3>Tasks</h3>
+              <ol>
+                  <li>HTML Basics</li>
+                  <li>CSS Basics</li>
+                  <li><a src="task3.html">JavaScript Basics</a></li>
+                  <li>JavaScript Canvases and Event Handling</li>
+                  <li>Web 1.0 Play Framework</li>
+                  <li>Automated Tests</li>
+                  <li>Web Sockets</li>
+                  <li>SPAs using React</li>
+                  <li>Databases</li>
+                  <li>Scala Canvases?</li>
+                  <li>Bringing Things Together</li>
+              </ol>
+              <h3>Projects</h3>
+              <p>I'll ask for more clarity but are there projects aside from the tasks? Are they listed somewhere for me to add here?</p>
+          </section>
+      </body>
+      <footer>
+          <div class="foot-left">
+              <p></p>
+          </div>
+          <div class="foot-main">
+              <p></p>
+          </div>
+          <div class="foot-right">
+              <a href="https://www.instagram.com/kai.kall/" class="fa fa-instagram"></a>
+              <a href = "mailto:akalling@trinity.edu?" class="fa fa-envelope"></a>
+          </div>
+      </footer>
+  </html>
 }
