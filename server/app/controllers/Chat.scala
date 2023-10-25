@@ -8,17 +8,17 @@ import play.api.libs.json._
 import play.api.mvc._
 
 @Singleton
-class chat  @Inject()(cc: ControllerComponents) extends AbstractController(cc){
+class Chat  @Inject()(cc: ControllerComponents) extends AbstractController(cc){
   def index = Action { implicit request =>
-    Ok(views.html.chatPage())
+    Ok(views.html.ChatPage())
   }
   def validateLogin = Action {request =>
     val loginVals = request.body.asFormUrlEncoded
     loginVals.map { args =>
         val username = args ("username").head
         val password = args ("password").head
-        Redirect(routes.chat.load)
-    }.getOrElse(Redirect(routes.login.index))
+        Redirect(routes.Chat.load)
+    }.getOrElse(Redirect(routes.LoginController.handleLogin))
   }
   def load= TODO
   def data = Action {

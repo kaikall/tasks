@@ -8,20 +8,20 @@ import play.api.mvc._
 import play.api.data._
 import play.api.data.Forms._
 import play.api.data.format.Formats._
-import models.LoginData
+import models.LoginModel
 import scala.concurrent.Future
 import views.html.defaultpages.error
 
-class AuthenticationController @Inject() (
+class LoginController @Inject() (
     val controllerComponents: ControllerComponents
 ) extends BaseController
     with I18nSupport {
 
-  val loginForm: Form[LoginData] = Form(
+  val loginForm: Form[LoginModel] = Form(
     mapping(
       "email" -> email,
       "password" -> nonEmptyText
-    )(LoginData.apply)(LoginData.unapply)
+    )(LoginModel.apply)(LoginModel.unapply)
   )
 
   def loginPage = Action { implicit request =>
@@ -34,7 +34,7 @@ class AuthenticationController @Inject() (
       .fold(
         errorForm => {
           // Handle form errors
-          Future.successful(BadRequest(views.html.login_page(errorForm)))
+          Future.successful(BadRequest(views.html.Login(errorForm)))
         },
         data => {
           // check the submitted email and password against your database, set up a session if the credentials are valid, or render an error message if they're not.
@@ -43,7 +43,7 @@ class AuthenticationController @Inject() (
       )
   }
 }
-
+/*
 
 package controllers
 
@@ -65,3 +65,4 @@ class login  @Inject()(cc: ControllerComponents) extends AbstractController(cc){
     Ok(Json.toJson(Seq("a","b","c")))
   }
 }
+*/
