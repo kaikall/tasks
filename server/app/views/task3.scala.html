@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kai Kallingal</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@@0,100;0,400;0,600;0,800;1,100;1,400;1,600;1,800&family=Vollkorn:ital,wght@@0,400;0,600;0,800;1,400;1,600;1,800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/tasks.css")">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+  
+    <body>
+        <header>
+            <div class="navbar" id="topnav">
+                <ul>
+                    <li class="dropdown">
+                            <button class="dropbtn">Tasks</button>
+                            <div class="dropdown-content">
+                                <a href="@routes.Application.task3"class="active">Task 3</a>
+                                <a href="#">Task 4</a>
+                                <a href="#">Task 5</a>
+                            </div>
+                    </li>
+                    <li><a href="AboutMe.html">About Me</a></li>
+                    <li><a href="index.html" >Home</a></li>
+                    
+                </ul>
+              </div>
+        </header>
+        <h1>Task 3: </h1>
+        <input id="inputValue" type="text" onkeyup="onSearch()" placeholder="Search a team by name">
+        <table id="myTable">
+            <!-- Table headers will be added dynamically -->
+            <thead id="headers"></thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+        <footer>
+            <div class="foot-left"></div>
+            <div class="foot-main"></div>
+            <div class="foot-right">
+                <a href="https://www.instagram.com/kai.kall/" class="fa fa-instagram"></a>
+                <a href = "mailto:akalling@@trinity.edu" class="fa fa-envelope"></a>
+            </div>
+        </footer>
+        <script src="scripts/script3.js"></script>
+    </body>
+</html>

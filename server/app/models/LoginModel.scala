@@ -1,3 +1,3 @@
 package models
 
-final case class LoginModel(email: String, password: String)
+final case class LoginModel(username: String, password: String)

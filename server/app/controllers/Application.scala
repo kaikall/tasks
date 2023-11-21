@@ -11,7 +11,10 @@ class Application @Inject()(cc: ControllerComponents) extends AbstractController
   def index = Action {
     Ok(views.html.index("homepage"))
   }
+  def task3 = Action {
+     Ok(views.html.task3())
+  }
   def login = Action {
-    Redirect(routes.LoginController.loginPage)
+    Redirect(routes.Chat.login)
   }
 }

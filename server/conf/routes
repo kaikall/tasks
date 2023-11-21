@@ -2,10 +2,16 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# Home page
+# home page
 GET        /                             controllers.Application.index
-GET        /login                        controllers.LoginController.loginPage  
-POST       /login                        controllers.LoginController.handleLogin
+# old tasks
+GET        /task3                        controllers.Application.task3
+# login page
+
++ nocsrf
+GET        /login                        controllers.Chat.login  
++ nocsrf
+POST       /validateLogin                controllers.Chat.validateLogin
 
 # web socket chat app routes
 GET        /chat                          controllers.Chat.index
