@@ -3,21 +3,22 @@
 # ~~~~
 
 # home page
-GET        /                             controllers.Application.index
+GET        /                               controllers.Application.index
 # old tasks
-GET        /task3                        controllers.Application.task3
+GET        /task3                          controllers.Application.task3
 # login page
-
-+ nocsrf
-GET        /login                        controllers.Chat.login  
-+ nocsrf
-POST       /validateLogin                controllers.Chat.validateLogin
+GET         /login                         controllers.Chat.login  
+POST        /validateLogin                 controllers.Chat.validateLogin
+POST        /createUser                    controllers.Chat.createUser
 
 # web socket chat app routes
-GET        /chat                          controllers.Chat.index
-GET        /load                          controllers.Chat.load
-GET        /data                          controllers.Chat.data
-
+# GET       /chat                          controllers.Chat.index
+# GET       /load                          controllers.Chat.load
+# GET       /data                          controllers.Chat.data
+GET         /messageLog()                  controllers.Chat.messageLog  
+GET         /logout                        controllers.Chat.logout
+POST        /addMessage                    controllers.Chat.addMessage
+POST        /deleteMessage                 controllers.Chat.deleteMessage
 # Prefix must match `play.assets.urlPrefix`
-GET        /assets/*file                 controllers.Assets.at(file)
-GET        /versionedAssets/*file        controllers.Assets.versioned(path="/public", file: Asset)
+GET         /assets/*file                  controllers.Assets.at(file)
+GET         /versionedAssets/*file         controllers.Assets.versioned(path="/public", file: Asset)

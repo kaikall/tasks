@@ -1,8 +1,7 @@
 package controllers
 
 import javax.inject._
-
-import shared.SharedMessages
+import shared.Message
 import play.api.mvc._
 
 @Singleton
@@ -14,6 +13,7 @@ class Application @Inject()(cc: ControllerComponents) extends AbstractController
   def task3 = Action {
      Ok(views.html.task3())
   }
+  
   def login = Action {
     Redirect(routes.Chat.login)
   }

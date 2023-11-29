@@ -1,6 +1,38 @@
-@()(implicit request: RequestHeader)
-
-@main("Web Socket Chat"){
-    <input type="text" id="chat-input" size="100"></input><br>
-    <textarea id="chat-area" rows="20"cols = "100"></textarea>
+@(messages: Seq[String])(implicit request: RequestHeader)
+@main(request.session.get("username").getOrElse("web 1.0 chat")){
+    <html>
+        <head>
+            <title></title>
+            <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/tasks.css")">
+        
+        </head>
+        <body>
+            <div id="public messages">
+                <h2>receive messages:</h2>
+                <ul>
+                    @for((message,i) <- messages.zipWithIndex){
+                        <li>@message</li>
+                        <form method="post" action = "@routes.Chat.deleteMessage">
+                            @helper.CSRF.formField
+                            <input type="hidden" name="ind" value="@i"></input>
+                            <input type = "submit" value="delete"></input>
+                        </form>
+                    }
+                </ul>
+                <h2>send messages:</h2>
+                <form method="post" action = "@routes.Chat.addMessage">
+                    @helper.CSRF.formField
+                    <label>recipient</label>
+                    <input type="text" name="recipient" size="80"></input><br>
+                    <label>message</label>
+                    <input type="text" name="newMessage" size="80" required></input><br>
+                    <input type = "submit" value="send"></input>
+                </form>
+                
+                    
+                
+            </div>
+            <a href="@routes.Chat.logout">Logout</a>
+        </body>
+    
 }

@@ -1,4 +1,4 @@
-@()
+@()(implicit request: RequestHeader)
 @main("Login2"){
     <head>
         <title>Login</title>
@@ -6,14 +6,24 @@
     </head>
     <body>
         <h2>Login Page</h2>
-        <form method="post" action = "validateLoginPost">
+        <h4>Existing Users:</h4>
+        <form method="post" action = "@routes.Chat.validateLogin">
+            @helper.CSRF.formField
             Username: <input type = "text" name = "username"></input>
             <br>
             Password: <input type = "password" name = "password"></input>
             <br>
             <input type = "submit"></input>
         </form>
-
+        <h4>Create an account:</h4>
+        <form method="post" action = "@routes.Chat.createUser">
+            @helper.CSRF.formField
+            Create username: <input type = "text" name = "newusername"></input>
+            <br>
+            Create password: <input type = "password" name = "newpassword"></input>
+            <br>
+            <input type = "submit"></input>
+        </form>
     </body>
 
 }

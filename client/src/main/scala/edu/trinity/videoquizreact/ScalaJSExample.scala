@@ -1,6 +1,6 @@
 package edu.trinity.videoquizreact
 
-import shared.SharedMessages
+import shared.Message
 import org.scalajs.dom
 
 import slinky.core._
